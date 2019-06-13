@@ -1,0 +1,9 @@
+alias l=less
+alias t=tail
+alias h=head
+alias c=cat
+alias v=vim
+
+cl() {
+	cat "$@" | less;
+}

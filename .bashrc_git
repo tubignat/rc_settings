@@ -1,0 +1,45 @@
+# shows directories alongside with branches they are switched to
+
+lg () {
+	ls -alF "$@"|awk '{match($0,/^(\S+\s+){8}(.+)$/,f);b="";c="git -C \""f[2]"\" branch 2>/dev/null";while((c|getline g)>0){if(match(g,/^\* (.+)$/,a)){b="("a[1]")"}};close(c);print$0,b}';
+}
+
+
+# git log
+
+alias glbase='git log --pretty=format:"%C(yellow)%h%Creset %s %n%C(cyan)%an %C(#875f87)%aD%C(red)%d  %n" --graph'
+
+alias gl='printf "\n\n" && glbase && printf "\n\n"'
+alias glhm='printf "\n\n" && glbase HEAD..origin/master && printf "\n\n"'
+alias glmh='printf "\n\n" && glbase origin/master..HEAD && printf "\n\n"'
+
+# end git log
+
+
+alias gf='git fetch'
+alias gpl='git pull'
+alias gph='git push'
+alias gb='git branch'
+alias ga='git add'
+
+
+# git rebase
+
+alias gr='git rebase'
+alias grom='git rebase origin/master'
+alias grc='git rebase --continue'
+alias gra='git rebase --abort'
+
+# end git rebase
+
+
+alias grt='git reset'
+
+alias gc='git checkout'
+
+alias gs='git status -sb'
+
+alias gd='git diff --word-diff=color'
+alias gdh='git diff HEAD --word-diff=color'
+
+alias gmnf='git merge --no-ff'
