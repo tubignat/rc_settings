@@ -9,9 +9,14 @@ lg () {
 
 alias glbase='git log --pretty=format:"%C(yellow)%h%Creset %s %n%C(cyan)%an %C(#875f87)%aD%C(red)%d  %n" --graph'
 
-alias gl='printf "\n\n" && glbase && printf "\n\n"'
-alias glhm='printf "\n\n" && glbase HEAD..origin/master && printf "\n\n"'
-alias glmh='printf "\n\n" && glbase origin/master..HEAD && printf "\n\n"'
+gl() {
+	printf "\n\n";
+	glbase "$@";
+	printf "\n\n";
+}
+
+alias glhm='gl HEAD..origin/master'
+alias glmh='gl origin/master..HEAD'
 
 # end git log
 
