@@ -1,5 +1,6 @@
 alias l=less
 alias t=tail
+alias tf='tail --follow'
 alias h=head
 alias c=cat
 alias v=vim

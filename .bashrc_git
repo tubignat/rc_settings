@@ -25,7 +25,10 @@ alias gf='git fetch'
 alias gpl='git pull'
 alias gph='git push'
 alias gb='git branch'
+alias gct='git commit'
+alias gcta='git commit --amend'
 alias ga='git add'
+alias gaa='git add --all'
 
 
 # git rebase
@@ -42,9 +45,12 @@ alias grt='git reset'
 
 alias gc='git checkout'
 
-alias gs='git status -sb'
+alias gss='git status -sb'
+alias gs='git status'
 
-alias gd='git diff --word-diff=color'
-alias gdh='git diff HEAD --word-diff=color'
+alias gd='git diff'
+alias gdw='git diff --word-diff=color'
+alias gdh='git diff HEAD'
+alias gdhw='git diff HEAD --word-diff=color'
 
 alias gmnf='git merge --no-ff'
