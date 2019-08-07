@@ -4,6 +4,16 @@ lg () {
 	ls -alF "$@"|awk '{match($0,/^(\S+\s+){8}(.+)$/,f);b="";c="git -C \""f[2]"\" branch 2>/dev/null";while((c|getline g)>0){if(match(g,/^\* (.+)$/,a)){b="("a[1]")"}};close(c);print$0,b}';
 }
 
+# finds a file path from git status using grep
+
+fgs() {
+	git status --porcelain | sed 's/^[A-Za-z ]\+\s\+//g' | grep $1
+}
+
+fgsvim() {
+	vim $(fgs $1)	
+}
+
 
 # git log
 
@@ -46,8 +56,12 @@ alias grth='git reset --hard'
 
 alias gc='git checkout'
 
+# git status
+
 alias gss='git status -sb'
 alias gs='git status'
+
+# end git status
 
 alias gd='git diff'
 alias gdw='git diff --word-diff=color'
