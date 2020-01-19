@@ -1,0 +1,7 @@
+cpth() {
+	realpath "$@" | sed -E "s/^\/c/C:/g;s:/:\\\:g"
+}
+
+cpthclip() {
+	realpath "$@" | sed -E "s/^\/c/C:/g;s:/:\\\:g" | clip
+}

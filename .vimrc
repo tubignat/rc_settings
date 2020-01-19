@@ -1,7 +1,8 @@
 set incsearch
+set ignorecase
+set smartcase
 set tabstop=4
 set showcmd
 syntax enable
 set number
-set ignorecase
-set smartcase
+set encoding=utf-8

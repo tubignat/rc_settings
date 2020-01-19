@@ -7,7 +7,7 @@ lg () {
 # finds a file path from git status using grep
 
 fgs() {
-	git status --porcelain | sed 's/^[A-Za-z ]\+\s\+//g' | grep $1
+	git status --porcelain | sed 's/^[A-Za-z ?]\+\s\+//g' | grep $1
 }
 
 fgsvim() {
